@@ -11468,6 +11468,14 @@ function exportDocumentHtml(){
     <tbody>${exportRowsHtml(rows)}</tbody>
   </table>
   <div class="notes">Notes: Upfront Plus amounts below R160 are shown in red; R160 and above are shown in black. ${claimShadingNote()} Red "CLAIMED" under the REF number indicates the member has already claimed against this funeral; a crying-face icon next to a name marks entries flagged in the source PDF. Source of truth: original PDF register, updated live as of ${nowStr()}.</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+</script>
 </body></html>`;
 }
 
@@ -11914,6 +11922,14 @@ function exportOwingDocumentHtml(){
     <tbody>${bodyRows}</tbody>
   </table>
   <div class="notes">Notes: This list includes only members still owing on at least one active claim, and mirrors the main register's layout and formatting, with member details (ref, name, balance) printed in red to flag the whole list as outstanding. ${claimShadingNote()} "CLAIMED" under the REF number indicates the member has already claimed against this funeral; a crying-face icon next to a name marks entries flagged in the source PDF. Source of truth: original PDF register, updated live as of ${nowStr()}.</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+</script>
 </body></html>`;
 }
 
@@ -12304,6 +12320,11 @@ document.getElementById('signOutBtn').addEventListener('click', async ()=>{
 </script>
 
 
-<!-- service worker registration removed so installed app always loads the latest deployed version -->
-
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+</script>
 </body></html>
